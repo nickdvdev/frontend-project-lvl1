@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-import {greet, count} from '..';
+import {greet} from '..';
 greet();
