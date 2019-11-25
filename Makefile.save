@@ -1,4 +1,4 @@
-install:
+instal:
 	npm install
 
 start:
@@ -9,6 +9,3 @@ test:
 
 publish:
 	npm publish --dry-run
-
-lint:
-	npx eslint .

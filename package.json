@@ -1,6 +1,6 @@
 {
   "name": "overbark-goes-south",
-  "version": "1.1.1",
+  "version": "1.1.32",
   "description": "hexlet-lvl1",
   "main": "index.js",
   "scripts": {
@@ -27,12 +27,18 @@
     "@babel/core": "^7.7.2",
     "@babel/node": "^7.7.0",
     "@babel/preset-env": "^7.7.1",
-    "readline-sync": "^1.4.10"
+    "eslint": "^6.7.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.18.2"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "npm": "^6.13.1",
+    "readline-sync": "^1.4.10"
+  }
 }
