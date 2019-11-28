@@ -7,5 +7,8 @@
 <p>Travic CI</p>
 <img src="https://travis-ci.org/JakeTheFriendlyDog/frontend-project-lvl1.svg?branch=master" />
 
-<p>Demonstration</p>
+<p>The "Is Even?" Game</p>
 <a href="https://asciinema.org/a/Q1Ar8x92rZvj2D3skCXygtjN7" target="_blank"><img src="https://asciinema.org/a/Q1Ar8x92rZvj2D3skCXygtjN7.svg" /></a>
+
+<p>The "Calculator" Game</p>
+<a href="https://asciinema.org/a/WTLPRSIvR06AkU42UwIvWeAGs" target="_blank"><img src="https://asciinema.org/a/WTLPRSIvR06AkU42UwIvWeAGs.svg" /></a>
