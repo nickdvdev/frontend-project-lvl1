@@ -12,3 +12,7 @@
 
 <p>The "Calculator" Game</p>
 <a href="https://asciinema.org/a/WTLPRSIvR06AkU42UwIvWeAGs" target="_blank"><img src="https://asciinema.org/a/WTLPRSIvR06AkU42UwIvWeAGs.svg" /></a>
+
+
+<p>The "Greatest Common Divisor" Game</p>
+<a href="https://asciinema.org/a/IS0bGj8FnLaPBwVJ9LtWVfKLX" target="_blank"><img src="https://asciinema.org/a/IS0bGj8FnLaPBwVJ9LtWVfKLX.svg" /></a>

@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 export const gameRounds = 3;
-const maxNum = 50;
+const maxNum = 10;
 const getNum = (max) => Math.floor(Math.random() * max);
 const cons = (a, b) => (message) => {
   if (message === 'car') {
@@ -48,7 +48,45 @@ export const gameCalc = () => {
     return numOne * numTwo;
   };
   const correctAnswer = String(getCorrectAnswer());
-  const answer = (readlineSync.question(`Question: ${numOne} ${strOperator} ${numTwo}\n`));
+  const answer = readlineSync.question(`Question: ${numOne} ${strOperator} ${numTwo}\n`);
+  const result = cons(answer, correctAnswer);
+  return result;
+};
+
+export const gameGcd = () => {
+  const numOne = getNum(maxNum);
+  const numTwo = getNum(maxNum);
+  const findGcd = (a, b) => {
+    if (a === 0) {
+      return b;
+    }
+    if (b === 0) {
+      return a;
+    }
+    if (a === b) {
+      return a;
+    }
+    if (a === 1 || b === 1) {
+      return 1;
+    }
+    if (a % 2 === 0 && b % 2 === 0) {
+      return 2 * findGcd(a / 2, b / 2);
+    }
+    if (a % 2 === 0 && b % 2 !== 0) {
+      return findGcd(a / 2, b);
+    }
+    if (a % 2 !== 0 && b % 2 === 0) {
+      return findGcd(a, b / 2);
+    }
+    if (a % 2 !== 0 && b % 2 !== 0) {
+      if (a > b) {
+        return findGcd((a - b) / 2, b);
+      }
+      return findGcd((b - a) / 2, a);
+    }
+  };
+  const correctAnswer = String(findGcd(numOne, numTwo));
+  const answer = readlineSync.question(`Question: ${numOne} ${numTwo}\n`);
   const result = cons(answer, correctAnswer);
   return result;
 };
