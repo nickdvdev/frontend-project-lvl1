@@ -1,7 +1,7 @@
 {
   "name": "overbark-goes-south",
-  "version": "1.7.0",
-  "description": "hexlet-lvl1",
+  "version": "1.7.1",
+  "description": "frontend project for hexlet, level 1",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
