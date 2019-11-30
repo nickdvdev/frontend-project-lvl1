@@ -91,6 +91,26 @@ export const gameGcd = () => {
   return result;
 };
 
+export const arithProgGame = () => {
+  const lengthOfArray = 10;
+  const arr = [getNum(maxNum)];
+  let question = '';
+  const hiddenNum = getNum(lengthOfArray);
+  for (let i = 0; i < lengthOfArray; i += 1) {
+    arr.push(arr[0] + (2 * (i + 1)));
+    if (i !== hiddenNum) {
+      question += ` ${arr[i]}`;
+    }
+    if (i === hiddenNum) {
+      question += ' ..';
+    }
+  }
+  const correctAnswer = `${arr[hiddenNum]}`;
+  const answer = readlineSync.question(`Question:${question}\n`);
+  const result = cons(answer, correctAnswer);
+  return result;
+};
+
 export const playGame = (rounds, gameType) => {
   const name = greet();
   for (let i = 0; i < rounds; i += 1) {

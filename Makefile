@@ -13,6 +13,9 @@ calc:
 gcd:
 	npx babel-node src/bin/games/brain-gcd.js
 
+progression:
+	npx babel-node src/bin/games/brain-progression.js
+
 test:
 	npx babel-node dist/bin/games/brain-games.js
 
