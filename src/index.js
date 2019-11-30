@@ -111,6 +111,28 @@ export const arithProgGame = () => {
   return result;
 };
 
+export const isPrimeGame = () => {
+  const num = getNum(maxNum);
+  const isPrime = (n) => {
+    if (n <= 3) {
+      return n > 1;
+    }
+    if (n % 2 === 0 || n % 3 === 0) {
+      return false;
+    }
+    for (let i = 5; i * i <= 0; i += 6) {
+      if (n % i === 0 || n % (i + 2) === 0) {
+        return false;
+      }
+    }
+    return true;
+  };
+  const correctAnswer = isPrime(num) === true ? 'yes' : 'no';
+  const answer = readlineSync.question(`Question: ${num}\n`);
+  const result = cons(answer, correctAnswer);
+  return result;
+};
+
 export const playGame = (rounds, gameType) => {
   const name = greet();
   for (let i = 0; i < rounds; i += 1) {

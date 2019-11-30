@@ -1,6 +1,6 @@
 {
   "name": "overbark-goes-south",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "hexlet-lvl1",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,8 @@
     "brain-even": "dist/bin/games/brain-even.js",
     "brain-calc": "dist/bin/games/brain-calc.js",
     "brain-gcd": "dist/bin/games/brain-gcd.js",
-    "brain-progression": "dist/bin/games/brain-progression.js"
+    "brain-progression": "dist/bin/games/brain-progression.js",
+    "brain-prime": "dist/bin/games/brain-prime.js"
   },
   "files": [
     "dist"

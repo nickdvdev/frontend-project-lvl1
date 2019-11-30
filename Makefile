@@ -16,6 +16,9 @@ gcd:
 progression:
 	npx babel-node src/bin/games/brain-progression.js
 
+prime:
+	npx babel-node src/bin/games/brain-prime.js
+
 test:
 	npx babel-node dist/bin/games/brain-games.js
 
