@@ -147,3 +147,38 @@ export const playGame = (rounds, gameType) => {
   }
   return console.log(`Congratulations, ${name}!`);
 };
+
+export const playBrainGame = () => {
+  welcome();
+  greet();
+};
+
+export const playBrainEven = () => {
+  welcome();
+  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+  playGame(gameRounds, gameEven);
+};
+
+export const playBrainCalc = () => {
+  welcome();
+  console.log('What is the result of the expression?');
+  playGame(gameRounds, gameCalc);
+};
+
+export const playBrainGcd = () => {
+  welcome();
+  console.log('Find the greatest common divisor of given numbers.');
+  playGame(gameRounds, gameGcd);
+};
+
+export const playBrainProgression = () => {
+  welcome();
+  console.log('What number is missing in the progression?\n');
+  playGame(gameRounds, arithProgGame);
+};
+
+export const playBrainPrime = () => {
+  welcome();
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  playGame(gameRounds, isPrimeGame);
+};
