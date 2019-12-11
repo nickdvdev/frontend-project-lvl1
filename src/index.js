@@ -54,6 +54,7 @@ export const gameCalc = () => {
 };
 
 const findGcd = (a, b) => {
+  let result;
   if (a === 0) {
     return b;
   }
@@ -64,20 +65,21 @@ const findGcd = (a, b) => {
     return 1;
   }
   if (a % 2 === 0 && b % 2 === 0) {
-    return 2 * findGcd(a / 2, b / 2);
+    result = 2 * findGcd(a / 2, b / 2);
   }
   if (a % 2 === 0 && b % 2 !== 0) {
-    return findGcd(a / 2, b);
+    result = findGcd(a / 2, b);
   }
   if (a % 2 !== 0 && b % 2 === 0) {
-    return findGcd(a, b / 2);
+    result = findGcd(a, b / 2);
   }
   if (a % 2 !== 0 && b % 2 !== 0) {
     if (a > b) {
-      return findGcd((a - b) / 2, b);
+      result = findGcd((a - b) / 2, b);
     }
-    return findGcd((b - a) / 2, a);
+    result = findGcd((b - a) / 2, a);
   }
+  return result;
 };
 
 export const gameGcd = () => {
@@ -109,22 +111,23 @@ export const arithProgGame = () => {
   return result;
 };
 
-export const isPrimeGame = () => {
-  const num = getNum(maxNum);
-  const isPrime = (n) => {
-    if (n <= 3) {
-      return n > 1;
-    }
-    if (n % 2 === 0 || n % 3 === 0) {
+const isPrime = (n) => {
+  if (n <= 3) {
+    return n > 1;
+  }
+  if (n % 2 === 0 || n % 3 === 0) {
+    return false;
+  }
+  for (let i = 5; i * i <= 0; i += 6) {
+    if (n % i === 0 || n % (i + 2) === 0) {
       return false;
     }
-    for (let i = 5; i * i <= 0; i += 6) {
-      if (n % i === 0 || n % (i + 2) === 0) {
-        return false;
-      }
-    }
-    return true;
-  };
+  }
+  return true;
+};
+
+export const isPrimeGame = () => {
+  const num = getNum(maxNum);
   const correctAnswer = isPrime(num) === true ? 'yes' : 'no';
   const answer = readlineSync.question(`Question: ${num}\n`);
   const result = cons(answer, correctAnswer);
