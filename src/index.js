@@ -74,10 +74,7 @@ const findGcd = (a, b) => {
     result = findGcd(a, b / 2);
   }
   if (a % 2 !== 0 && b % 2 !== 0) {
-    if (a > b) {
-      result = findGcd((a - b) / 2, b);
-    }
-    result = findGcd((b - a) / 2, a);
+    result = a > b ? findGcd((a - b) / 2, b) : findGcd((b - a) / 2, a);
   }
   return result;
 };
@@ -111,15 +108,18 @@ export const arithProgGame = () => {
   return result;
 };
 
-const isPrime = (n) => {
-  if (n <= 3) {
-    return n > 1;
+const isPrime = (num) => {
+  if (num <= 3) {
+    return num > 1;
   }
-  if (n % 2 === 0 || n % 3 === 0) {
+  if (num % 2 === 0 || num % 3 === 0) {
     return false;
   }
   for (let i = 5; i * i <= 0; i += 6) {
-    if (n % i === 0 || n % (i + 2) === 0) {
+    if (num % i === 0) {
+      return false;
+    }
+    if (num % (i + 2) === 0) {
       return false;
     }
   }
