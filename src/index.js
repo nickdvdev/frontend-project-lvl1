@@ -53,38 +53,36 @@ export const gameCalc = () => {
   return result;
 };
 
+const findGcd = (a, b) => {
+  if (a === 0) {
+    return b;
+  }
+  if (b === 0 || a === b) {
+    return a;
+  }
+  if (a === 1 || b === 1) {
+    return 1;
+  }
+  if (a % 2 === 0 && b % 2 === 0) {
+    return 2 * findGcd(a / 2, b / 2);
+  }
+  if (a % 2 === 0 && b % 2 !== 0) {
+    return findGcd(a / 2, b);
+  }
+  if (a % 2 !== 0 && b % 2 === 0) {
+    return findGcd(a, b / 2);
+  }
+  if (a % 2 !== 0 && b % 2 !== 0) {
+    if (a > b) {
+      return findGcd((a - b) / 2, b);
+    }
+    return findGcd((b - a) / 2, a);
+  }
+};
+
 export const gameGcd = () => {
   const numOne = getNum(maxNum);
   const numTwo = getNum(maxNum);
-  const findGcd = (a, b) => {
-    if (a === 0) {
-      return b;
-    }
-    if (b === 0) {
-      return a;
-    }
-    if (a === b) {
-      return a;
-    }
-    if (a === 1 || b === 1) {
-      return 1;
-    }
-    if (a % 2 === 0 && b % 2 === 0) {
-      return 2 * findGcd(a / 2, b / 2);
-    }
-    if (a % 2 === 0 && b % 2 !== 0) {
-      return findGcd(a / 2, b);
-    }
-    if (a % 2 !== 0 && b % 2 === 0) {
-      return findGcd(a, b / 2);
-    }
-    if (a % 2 !== 0 && b % 2 !== 0) {
-      if (a > b) {
-        return findGcd((a - b) / 2, b);
-      }
-      return findGcd((b - a) / 2, a);
-    }
-  };
   const correctAnswer = String(findGcd(numOne, numTwo));
   const answer = readlineSync.question(`Question: ${numOne} ${numTwo}\n`);
   const result = cons(answer, correctAnswer);
