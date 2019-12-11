@@ -116,10 +116,7 @@ const isPrime = (num) => {
     return false;
   }
   for (let i = 5; i * i <= 0; i += 6) {
-    if (num % i === 0) {
-      return false;
-    }
-    if (num % (i + 2) === 0) {
+    if (num % i === 0 || num % (i + 2) === 0) {
       return false;
     }
   }
