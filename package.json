@@ -1,6 +1,6 @@
 {
   "name": "overbark-goes-south",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "description": "frontend project for hexlet, level 1",
   "main": "index.js",
   "scripts": {
