@@ -45,7 +45,7 @@
     "dist"
   ],
   "dependencies": {
-    "npm": "^6.13.1",
+    "npm": ">=6.13.4",
     "readline-sync": "^1.4.10"
   }
 }
