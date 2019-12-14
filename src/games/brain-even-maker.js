@@ -1,3 +1,7 @@
-import { playBrainEven as game } from '..';
+import { playGame, gameRounds, gameEven } from '..';
 
-export default game;
+export default () => {
+  console.log('Welcome to the Brain Games!');
+  console.log('Answer "yes" if the number is even, otherwise answer "no".\n');
+  playGame(gameRounds, gameEven);
+};
