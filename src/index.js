@@ -24,12 +24,15 @@ export const playGame = (gameType, condition) => {
   if (gameType) {
     for (let i = 0; i < gameRounds; i += 1) {
       const game = gameType();
-      console.log(`Your answer: ${car(game)}`);
-      if (car(game) === cdr(game)) {
+      const correctAnswer = cdr(game);
+      const question = car(game);
+      const answer = readlineSync.question(`Question: ${question}\n`);
+      console.log(`Your answer: ${answer}`);
+      if (answer === correctAnswer) {
         console.log('Correct!');
       }
-      if (car(game) !== cdr(game)) {
-        return console.log(`${car(game)} is wrong answer ;(. Correct answer was ${cdr(game)}.\nLet's try again, ${name}!`);
+      if (answer !== correctAnswer) {
+        return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
       }
     }
     return console.log(`Congratulations, ${name}!`);

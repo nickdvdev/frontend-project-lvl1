@@ -1,26 +1,24 @@
-import readlineSync from 'readline-sync';
 import {
   playGame, getNum, maxNum, cons,
 } from '..';
 
+const lengthOfArray = 10;
+
 export const arithProgGame = () => {
-  const lengthOfArray = 10;
   const arr = [getNum(maxNum)];
-  let question = '';
   const hiddenNum = getNum(lengthOfArray);
+  let question = '';
   for (let i = 0; i < lengthOfArray; i += 1) {
     arr.push(arr[0] + (2 * (i + 1)));
     if (i !== hiddenNum) {
-      question += ` ${arr[i]}`;
+      question = `${question} ${arr[i]}`;
     }
     if (i === hiddenNum) {
-      question += ' ..';
+      question = `${question} ${'..'}`;
     }
   }
   const correctAnswer = `${arr[hiddenNum]}`;
-  const answer = readlineSync.question(`Question:${question}\n`);
-  const result = cons(answer, correctAnswer);
-  return result;
+  return cons(question, correctAnswer);
 };
 
 const condition = 'What number is missing in the progression?';

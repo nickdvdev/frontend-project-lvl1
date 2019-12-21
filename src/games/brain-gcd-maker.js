@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   playGame, getNum, maxNum, cons,
 } from '..';
@@ -33,9 +32,8 @@ export const gameGcd = () => {
   const numOne = getNum(maxNum);
   const numTwo = getNum(maxNum);
   const correctAnswer = String(findGcd(numOne, numTwo));
-  const answer = readlineSync.question(`Question: ${numOne} ${numTwo}\n`);
-  const result = cons(answer, correctAnswer);
-  return result;
+  const question = `${numOne} ${numTwo}`;
+  return cons(question, correctAnswer);
 };
 
 const condition = 'Find the greatest common divisor of given numbers.';

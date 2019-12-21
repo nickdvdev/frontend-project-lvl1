@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   playGame, getNum, maxNum, cons,
 } from '..';
@@ -19,11 +18,9 @@ const isPrime = (num) => {
 };
 
 export const isPrimeGame = () => {
-  const num = getNum(maxNum);
-  const correctAnswer = isPrime(num) === true ? 'yes' : 'no';
-  const answer = readlineSync.question(`Question: ${num}\n`);
-  const result = cons(answer, correctAnswer);
-  return result;
+  const question = getNum(maxNum);
+  const correctAnswer = isPrime(question) === true ? 'yes' : 'no';
+  return cons(question, correctAnswer);
 };
 
 const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';

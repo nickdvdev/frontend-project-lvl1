@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import {
   playGame, getNum, maxNum, cons,
 } from '..';
@@ -6,11 +5,9 @@ import {
 const isEven = (num) => num % 2 === 0;
 
 export const gameEven = () => {
-  const num = getNum(maxNum);
-  const correctAnswer = isEven(num) === true ? 'yes' : 'no';
-  const answer = (readlineSync.question(`Question: ${num}\n`));
-  const result = cons(answer, correctAnswer);
-  return result;
+  const question = getNum(maxNum);
+  const correctAnswer = isEven(question) === true ? 'yes' : 'no';
+  return cons(question, correctAnswer);
 };
 
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
