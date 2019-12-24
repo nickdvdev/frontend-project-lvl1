@@ -16,25 +16,22 @@ const cdr = (pair) => pair('cdr');
 
 export const playGame = (gameType, condition) => {
   console.log('Welcome to the Brain Games!');
-  if (condition) {
-    console.log(condition);
-  }
+  console.log(condition);
   const name = readlineSync.question('May I have your name, please?\n');
   console.log(`Hello, ${name}!`);
-  if (gameType) {
-    for (let i = 0; i < gameRounds; i += 1) {
-      const game = gameType();
-      const correctAnswer = cdr(game);
-      const question = car(game);
-      const answer = readlineSync.question(`Question: ${question}\n`);
-      console.log(`Your answer: ${answer}`);
-      if (answer === correctAnswer) {
-        console.log('Correct!');
-      }
-      if (answer !== correctAnswer) {
-        return console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
-      }
+  for (let i = 0; i < gameRounds; i += 1) {
+    const game = gameType();
+    const correctAnswer = cdr(game);
+    const question = car(game);
+    const answer = readlineSync.question(`Question: ${question}\n`);
+    console.log(`Your answer: ${answer}`);
+    if (answer === correctAnswer) {
+      console.log('Correct!');
     }
-    return console.log(`Congratulations, ${name}!`);
+    if (answer !== correctAnswer) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+      return;
+    }
+    console.log(`Congratulations, ${name}!`);
   }
 };
