@@ -1,13 +1,15 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, getNum, maxNum } from '..';
+import {
+  playGame, getNum, minNum, maxNum,
+} from '..';
 
-const lengthOfArray = 10;
+const array = 10;
 
 export const arithProgGame = () => {
-  const arr = [getNum(maxNum)];
-  const hiddenNum = getNum(lengthOfArray);
+  const arr = [getNum(minNum, maxNum)];
+  const hiddenNum = getNum(array);
   let question = '';
-  for (let i = 0; i < lengthOfArray; i += 1) {
+  for (let i = 0; i < array; i += 1) {
     arr.push(arr[0] + (2 * (i + 1)));
     if (i !== hiddenNum) {
       question = `${question} ${arr[i]}`;

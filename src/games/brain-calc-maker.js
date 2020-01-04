@@ -1,11 +1,13 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, getNum, maxNum } from '..';
+import {
+  playGame, getNum, minNum, maxNum,
+} from '..';
 
 const operators = ['+', '-', '*'];
 
 export const gameCalc = () => {
-  const numOne = getNum(maxNum);
-  const numTwo = getNum(maxNum);
+  const numOne = getNum(minNum, maxNum);
+  const numTwo = getNum(minNum, maxNum);
   const operator = operators[getNum(operators.length)];
   const getCorrectAnswer = () => {
     switch (operator) {

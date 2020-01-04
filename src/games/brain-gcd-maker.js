@@ -1,35 +1,18 @@
 import { cons } from '@hexlet/pairs';
-import { playGame, getNum, maxNum } from '..';
+import {
+  playGame, getNum, minNum, maxNum,
+} from '..';
 
 const findGcd = (a, b) => {
-  let result;
-  if (a === 0) {
-    return b;
-  }
-  if (b === 0 || a === b) {
+  if (b === 0) {
     return a;
   }
-  if (a === 1 || b === 1) {
-    return 1;
-  }
-  if (a % 2 === 0 && b % 2 === 0) {
-    result = 2 * findGcd(a / 2, b / 2);
-  }
-  if (a % 2 === 0 && b % 2 !== 0) {
-    result = findGcd(a / 2, b);
-  }
-  if (a % 2 !== 0 && b % 2 === 0) {
-    result = findGcd(a, b / 2);
-  }
-  if (a % 2 !== 0 && b % 2 !== 0) {
-    result = a > b ? findGcd((a - b) / 2, b) : findGcd((b - a) / 2, a);
-  }
-  return result;
+  return findGcd(b, a % b);
 };
 
 export const gameGcd = () => {
-  const numOne = getNum(maxNum);
-  const numTwo = getNum(maxNum);
+  const numOne = getNum(minNum, maxNum);
+  const numTwo = getNum(minNum, maxNum);
   const correctAnswer = String(findGcd(numOne, numTwo));
   const question = `${numOne} ${numTwo}`;
   return cons(question, correctAnswer);
