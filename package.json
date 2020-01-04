@@ -2,7 +2,6 @@
   "name": "overbark-goes-south",
   "version": "1.7.9",
   "description": "frontend project for hexlet, level 1",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -22,6 +21,16 @@
     "url": "https://github.com/JakeTheFriendlyDog/frontend-project-lvl1/issues"
   },
   "homepage": "https://github.com/JakeTheFriendlyDog/frontend-project-lvl1#readme",
+  "bin": {
+    "brain-even": "dist/bin/brain-even.js",
+    "brain-calc": "dist/bin/brain-calc.js",
+    "brain-gcd": "dist/bin/brain-gcd.js",
+    "brain-progression": "dist/bin/brain-progression.js",
+    "brain-prime": "dist/bin/brain-prime.js"
+  },
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.7.0",
     "@babel/core": "^7.7.2",
@@ -33,18 +42,8 @@
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.18.2"
   },
-  "bin": {
-    "brain-even": "dist/bin/brain-even.js",
-    "brain-calc": "dist/bin/brain-calc.js",
-    "brain-gcd": "dist/bin/brain-gcd.js",
-    "brain-progression": "dist/bin/brain-progression.js",
-    "brain-prime": "dist/bin/brain-prime.js"
-  },
-  "files": [
-    "dist"
-  ],
   "dependencies": {
-    "npm": ">=6.13.4",
+    "@hexlet/pairs": "^1.0.10",
     "readline-sync": "^1.4.10"
   }
 }

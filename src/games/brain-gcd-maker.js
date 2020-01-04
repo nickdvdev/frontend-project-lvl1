@@ -1,6 +1,5 @@
-import {
-  playGame, getNum, maxNum, cons,
-} from '..';
+import { cons } from '@hexlet/pairs';
+import { playGame, getNum, maxNum } from '..';
 
 const findGcd = (a, b) => {
   let result;

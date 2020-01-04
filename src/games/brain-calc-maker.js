@@ -1,6 +1,5 @@
-import {
-  playGame, getNum, maxNum, cons,
-} from '..';
+import { cons } from '@hexlet/pairs';
+import { playGame, getNum, maxNum } from '..';
 
 const operators = ['+', '-', '*'];
 
@@ -14,8 +13,10 @@ export const gameCalc = () => {
         return numOne - numTwo;
       case '+':
         return numOne + numTwo;
-      default:
+      case '*':
         return numOne * numTwo;
+      default:
+        return 'Something went wrong';
     }
   };
   const correctAnswer = String(getCorrectAnswer());

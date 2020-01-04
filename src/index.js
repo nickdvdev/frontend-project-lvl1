@@ -1,18 +1,9 @@
 import readlineSync from 'readline-sync';
+import { car, cdr } from '@hexlet/pairs';
 
 export const gameRounds = 3;
 export const maxNum = 10;
 export const getNum = (max) => Math.floor(Math.random() * max);
-export const cons = (a, b) => (message) => {
-  if (message === 'car') {
-    return a;
-  }
-  if (message === 'cdr') {
-    return b;
-  }
-};
-const car = (pair) => pair('car');
-const cdr = (pair) => pair('cdr');
 
 export const playGame = (gameType, condition) => {
   console.log('Welcome to the Brain Games!');
@@ -32,6 +23,6 @@ export const playGame = (gameType, condition) => {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
       return;
     }
-    console.log(`Congratulations, ${name}!`);
   }
+  console.log(`Congratulations, ${name}!`);
 };

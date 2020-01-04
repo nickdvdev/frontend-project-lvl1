@@ -4,7 +4,7 @@ import {
 
 const isEven = (num) => num % 2 === 0;
 
-export const gameEven = () => {
+const gameEven = () => {
   const question = getNum(maxNum);
   const correctAnswer = isEven(question) === true ? 'yes' : 'no';
   return cons(question, correctAnswer);
