@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
 
-export const gameRounds = 3;
+const gameRounds = 3;
 export const minNum = 10;
 export const maxNum = 20;
 export const getNum = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));

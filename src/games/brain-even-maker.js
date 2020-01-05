@@ -5,7 +5,7 @@ import {
 
 const isEven = (num) => num % 2 === 0;
 
-const gameEven = () => {
+const playEvenGame = () => {
   const question = getNum(minNum, maxNum);
   const correctAnswer = isEven(question) === true ? 'yes' : 'no';
   return cons(question, correctAnswer);
@@ -14,5 +14,5 @@ const gameEven = () => {
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default () => {
-  playGame(gameEven, condition);
+  playGame(playEvenGame, condition);
 };

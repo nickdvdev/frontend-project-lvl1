@@ -5,7 +5,7 @@ import {
 
 const operators = ['+', '-', '*'];
 
-export const gameCalc = () => {
+const playCalcGame = () => {
   const numOne = getNum(minNum, maxNum);
   const numTwo = getNum(minNum, maxNum);
   const operator = operators[getNum(operators.length)];
@@ -29,5 +29,5 @@ export const gameCalc = () => {
 const condition = 'What is the result of the expression?';
 
 export default () => {
-  playGame(gameCalc, condition);
+  playGame(playCalcGame, condition);
 };

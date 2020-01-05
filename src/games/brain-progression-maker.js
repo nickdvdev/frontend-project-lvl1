@@ -3,27 +3,28 @@ import {
   playGame, getNum, minNum, maxNum,
 } from '..';
 
-const array = 10;
+const length = 10;
+const difference = 2;
 
-export const arithProgGame = () => {
-  const arr = [getNum(minNum, maxNum)];
-  const hiddenNum = getNum(array);
-  let question = '';
-  for (let i = 0; i < array; i += 1) {
-    arr.push(arr[0] + (2 * (i + 1)));
-    if (i !== hiddenNum) {
-      question = `${question} ${arr[i]}`;
+const playArithProgGame = () => {
+  const progression = [getNum(minNum, maxNum)];
+  const hidden = getNum(progression.length, length);
+  let question = `${progression}`;
+  for (let i = 1; i <= length; i += 1) {
+    progression.push(progression[0] + (difference * i));
+    if (i !== hidden) {
+      question = `${question} ${progression[i]}`;
     }
-    if (i === hiddenNum) {
+    if (i === hidden) {
       question = `${question} ${'..'}`;
     }
   }
-  const correctAnswer = `${arr[hiddenNum]}`;
+  const correctAnswer = `${progression[hidden]}`;
   return cons(question, correctAnswer);
 };
 
 const condition = 'What number is missing in the progression?';
 
 export default () => {
-  playGame(arithProgGame, condition);
+  playGame(playArithProgGame, condition);
 };
