@@ -8,7 +8,7 @@ const operators = ['+', '-', '*'];
 const playCalcGame = () => {
   const numOne = getNum(minNum, maxNum);
   const numTwo = getNum(minNum, maxNum);
-  const operator = operators[getNum(operators.length)];
+  const operator = operators[getNum(0, operators.length - 1)];
   const getCorrectAnswer = () => {
     switch (operator) {
       case '-':
