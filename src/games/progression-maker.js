@@ -6,7 +6,7 @@ import {
 const length = 10;
 const difference = 2;
 
-const playArithProgGame = () => {
+const setupArithProgGame = () => {
   const progression = [getNum(minNum, maxNum)];
   const hidden = getNum(progression.length, length);
   let question = `${progression}`;
@@ -26,5 +26,5 @@ const playArithProgGame = () => {
 const condition = 'What number is missing in the progression?';
 
 export default () => {
-  playGame(playArithProgGame, condition);
+  playGame(setupArithProgGame, condition);
 };

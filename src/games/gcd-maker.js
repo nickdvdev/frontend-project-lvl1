@@ -10,7 +10,7 @@ const findGcd = (a, b) => {
   return findGcd(b, a % b);
 };
 
-const playGcdGame = () => {
+const setupGcdGame = () => {
   const numOne = getNum(minNum, maxNum);
   const numTwo = getNum(minNum, maxNum);
   const correctAnswer = String(findGcd(numOne, numTwo));
@@ -21,5 +21,5 @@ const playGcdGame = () => {
 const condition = 'Find the greatest common divisor of given numbers.';
 
 export default () => {
-  playGame(playGcdGame, condition);
+  playGame(setupGcdGame, condition);
 };

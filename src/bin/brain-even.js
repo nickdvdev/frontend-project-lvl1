@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import game from '../games/brain-even-maker';
+import play from '../games/even-maker';
 
-game();
+play();
