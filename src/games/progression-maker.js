@@ -4,19 +4,20 @@ import {
 } from '..';
 
 const length = 10;
-const difference = 2;
+const difference = getNum(minNum, maxNum);
 
 const setupArithProgGame = () => {
-  const progression = [getNum(minNum, maxNum)];
+  const startPoint = getNum(minNum, maxNum);
+  const progression = [];
   const hidden = getNum(progression.length, length);
   let question = `${progression}`;
-  for (let i = 1; i <= length; i += 1) {
-    progression.push(progression[0] + (difference * i));
+  for (let i = 0; i < length; i += 1) {
+    progression.push(startPoint + (difference * i));
     if (i !== hidden) {
       question = `${question} ${progression[i]}`;
     }
     if (i === hidden) {
-      question = `${question} ${'..'}`;
+      question = `${question} ..`;
     }
   }
   const correctAnswer = `${progression[hidden]}`;
