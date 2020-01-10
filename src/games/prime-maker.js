@@ -1,7 +1,6 @@
 import { cons } from '@hexlet/pairs';
-import {
-  playGame, getNum, minNum, maxNum,
-} from '..';
+import playGame from '..';
+import { getNum, minNum, maxNum } from '../utils';
 
 const isPrime = (num) => {
   if (num <= 3) {

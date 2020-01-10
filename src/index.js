@@ -1,12 +1,8 @@
 import readlineSync from 'readline-sync';
 import { car, cdr } from '@hexlet/pairs';
+import { gameRounds } from './utils';
 
-const gameRounds = 3;
-export const minNum = 1;
-export const maxNum = 10;
-export const getNum = (min, max) => Math.floor(min + Math.random() * (max + 1 - min));
-
-export const playGame = (gameType, condition) => {
+const playGame = (gameType, condition) => {
   console.log('Welcome to the Brain Games!');
   console.log(condition);
   const name = readlineSync.question('May I have your name, please?\n');
@@ -27,3 +23,5 @@ export const playGame = (gameType, condition) => {
   }
   console.log(`Congratulations, ${name}!`);
 };
+
+export default playGame;
