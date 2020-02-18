@@ -4,7 +4,7 @@ import { getNum, minNum, maxNum } from '../utils';
 
 const isEven = (num) => num % 2 === 0;
 
-const setupEvenGame = () => {
+const prepareEvenGame = () => {
   const question = getNum(minNum, maxNum);
   const correctAnswer = isEven(question) === true ? 'yes' : 'no';
   return cons(question, correctAnswer);
@@ -13,5 +13,5 @@ const setupEvenGame = () => {
 const condition = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 export default () => {
-  playGame(setupEvenGame, condition);
+  playGame(prepareEvenGame, condition);
 };

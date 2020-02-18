@@ -17,7 +17,8 @@ const playGame = (gameType, condition) => {
       console.log('Correct!');
     }
     if (answer !== correctAnswer) {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.\nLet's try again, ${name}!`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }

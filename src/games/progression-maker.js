@@ -2,29 +2,36 @@ import { cons } from '@hexlet/pairs';
 import playGame from '..';
 import { getNum, minNum, maxNum } from '../utils';
 
-const length = 10;
-const difference = getNum(minNum, maxNum);
+const progressionLength = 10;
 
-const setupArithProgGame = () => {
-  const startPoint = getNum(minNum, maxNum);
+const makeProgression = () => {
   const progression = [];
-  const hidden = getNum(progression.length, length);
-  let question = `${progression}`;
-  for (let i = 0; i < length; i += 1) {
+  const difference = getNum(minNum, maxNum);
+  const startPoint = getNum(minNum, maxNum);
+  for (let i = 0; i < progressionLength; i += 1) {
     progression.push(startPoint + (difference * i));
-    if (i !== hidden) {
-      question = `${question} ${progression[i]}`;
+  }
+  return progression;
+};
+
+const prepareArithProgGame = () => {
+  const progression = makeProgression(progressionLength);
+  const hiddenNum = getNum(0, progressionLength - 1);
+  let question = '';
+  for (let i = 0; i < progression.length; i += 1) {
+    if (i !== hiddenNum) {
+      question = `${question}${progression[i]} `;
     }
-    if (i === hidden) {
-      question = `${question} ..`;
+    if (i === hiddenNum) {
+      question = `${question}.. `;
     }
   }
-  const correctAnswer = `${progression[hidden]}`;
+  const correctAnswer = `${progression[hiddenNum]}`;
   return cons(question, correctAnswer);
 };
 
 const condition = 'What number is missing in the progression?';
 
 export default () => {
-  playGame(setupArithProgGame, condition);
+  playGame(prepareArithProgGame, condition);
 };

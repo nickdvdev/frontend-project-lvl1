@@ -13,11 +13,11 @@ const getCorrectAnswer = (operator, one, two) => {
     case '*':
       return one * two;
     default:
-      return 'Something went wrong';
+      return false;
   }
 };
 
-const setupCalcGame = () => {
+const prepareCalcGame = () => {
   const numOne = getNum(minNum, maxNum);
   const numTwo = getNum(minNum, maxNum);
   const operator = operators[getNum(0, operators.length - 1)];
@@ -29,5 +29,5 @@ const setupCalcGame = () => {
 const condition = 'What is the result of the expression?';
 
 export default () => {
-  playGame(setupCalcGame, condition);
+  playGame(prepareCalcGame, condition);
 };

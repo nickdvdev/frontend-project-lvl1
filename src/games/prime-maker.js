@@ -17,7 +17,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const setupIsPrimeGame = () => {
+const prepareIsPrimeGame = () => {
   const question = getNum(minNum, maxNum);
   const correctAnswer = isPrime(question) === true ? 'yes' : 'no';
   return cons(question, correctAnswer);
@@ -26,5 +26,5 @@ const setupIsPrimeGame = () => {
 const condition = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export default () => {
-  playGame(setupIsPrimeGame, condition);
+  playGame(prepareIsPrimeGame, condition);
 };
