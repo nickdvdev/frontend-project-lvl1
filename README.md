@@ -4,11 +4,11 @@
 
 <h2>How to play</h2>
 <p>Run the following commands in your terminal:</p>
-<p><code>brain-even</code> for the "Is Even?" Game</p>
-<p><code>brain-calc</code> for the "Calculator" Game<</p>
-<p><code>brain-prime</code> for the "Is Prime?" Game</p>
-<p><code>brain-gcd</code> for the "Greatest Common Divisor" Game</p>
-<p><code>brain-progression</code> for the "Arithmetic Progression" Game</p>
+<p><code>brain-even</code> to start the "Is Even?" Game</p>
+<p><code>brain-calc</code> to start the "Calculator" Game</p>
+<p><code>brain-prime</code> to start the "Is Prime?" Game</p>
+<p><code>brain-gcd</code> to start the "Greatest Common Divisor" Game</p>
+<p><code>brain-progression</code> to start the "Arithmetic Progression" Game</p>
 
 <h2>CodeClimate Maintainability Badge</h2>
 <a href="https://codeclimate.com/github/JakeTheFriendlyDog/frontend-project-lvl1/maintainability" target="_blank"><img src="https://api.codeclimate.com/v1/badges/611832262792c97d4f4a/maintainability" /></a>
