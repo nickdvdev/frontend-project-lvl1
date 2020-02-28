@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import { getNum, minNum, maxNum } from '../utils';
+import { generateNum, minNum, maxNum } from '../utils';
 
 const isPrime = (num) => {
   if (num <= 3) {
@@ -18,7 +18,7 @@ const isPrime = (num) => {
 };
 
 const prepareIsPrimeGame = () => {
-  const question = getNum(minNum, maxNum);
+  const question = generateNum(minNum, maxNum);
   const correctAnswer = isPrime(question) === true ? 'yes' : 'no';
   return cons(question, correctAnswer);
 };

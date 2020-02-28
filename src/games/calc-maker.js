@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import { getNum, minNum, maxNum } from '../utils';
+import { generateNum, minNum, maxNum } from '../utils';
 
 const operators = ['+', '-', '*'];
 
@@ -18,9 +18,9 @@ const getCorrectAnswer = (operator, one, two) => {
 };
 
 const prepareCalcGame = () => {
-  const numOne = getNum(minNum, maxNum);
-  const numTwo = getNum(minNum, maxNum);
-  const operator = operators[getNum(0, operators.length - 1)];
+  const numOne = generateNum(minNum, maxNum);
+  const numTwo = generateNum(minNum, maxNum);
+  const operator = operators[generateNum(0, operators.length - 1)];
   const correctAnswer = String(getCorrectAnswer(operator, numOne, numTwo));
   const question = `${numOne} ${operator} ${numTwo}`;
   return cons(question, correctAnswer);

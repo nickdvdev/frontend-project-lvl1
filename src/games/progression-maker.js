@@ -1,13 +1,13 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import { getNum, minNum, maxNum } from '../utils';
+import { generateNum, minNum, maxNum } from '../utils';
 
 const progressionLength = 10;
 
 const makeProgression = () => {
   const progression = [];
-  const difference = getNum(minNum, maxNum);
-  const startPoint = getNum(minNum, maxNum);
+  const difference = generateNum(minNum, maxNum);
+  const startPoint = generateNum(minNum, maxNum);
   for (let i = 0; i < progressionLength; i += 1) {
     progression.push(startPoint + (difference * i));
   }
@@ -16,17 +16,17 @@ const makeProgression = () => {
 
 const prepareArithProgGame = () => {
   const progression = makeProgression(progressionLength);
-  const hiddenNum = getNum(0, progressionLength - 1);
+  const indexOfHiddenNum = generateNum(0, progressionLength - 1);
   let question = '';
   for (let i = 0; i < progression.length; i += 1) {
-    if (i !== hiddenNum) {
+    if (i !== indexOfHiddenNum) {
       question = `${question}${progression[i]} `;
     }
-    if (i === hiddenNum) {
+    if (i === indexOfHiddenNum) {
       question = `${question}.. `;
     }
   }
-  const correctAnswer = `${progression[hiddenNum]}`;
+  const correctAnswer = progression[indexOfHiddenNum].toString();
   return cons(question, correctAnswer);
 };
 

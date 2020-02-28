@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import playGame from '..';
-import { getNum, minNum, maxNum } from '../utils';
+import { generateNum, minNum, maxNum } from '../utils';
 
 const findGcd = (a, b) => {
   if (b === 0) {
@@ -10,8 +10,8 @@ const findGcd = (a, b) => {
 };
 
 const prepareGcdGame = () => {
-  const numOne = getNum(minNum, maxNum);
-  const numTwo = getNum(minNum, maxNum);
+  const numOne = generateNum(minNum, maxNum);
+  const numTwo = generateNum(minNum, maxNum);
   const correctAnswer = String(findGcd(numOne, numTwo));
   const question = `${numOne} ${numTwo}`;
   return cons(question, correctAnswer);
