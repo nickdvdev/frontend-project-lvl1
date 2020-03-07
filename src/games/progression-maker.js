@@ -16,14 +16,15 @@ const prepareArithProgGame = () => {
   const startPoint = generateNum(minNum, maxNum);
   const difference = generateNum(minNum, maxNum);
   const progression = makeProgression(startPoint, difference);
-  const indexOfHiddenNum = generateNum(0, progressionLength - 1);
+  const hiddenNumberIndex = generateNum(0, progressionLength - 1);
   let question = '';
-  for (let i = 0; i < progression.length; i += 1) {
-    question = i === indexOfHiddenNum ? `${question}.. `
+  for (let i = 0; i < progressionLength; i += 1) {
+    question = i === hiddenNumberIndex
+      ? `${question}.. `
       : `${question}${progression[i]} `;
   }
   question = question.trim();
-  const correctAnswer = progression[indexOfHiddenNum].toString();
+  const correctAnswer = progression[hiddenNumberIndex].toString();
   return cons(question, correctAnswer);
 };
 
